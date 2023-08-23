@@ -22,7 +22,7 @@ const contactsSlice = createSlice({
       state.isLoading = false;
       state.error = action.payload;
     },
-    addNewContact(state, action) {
+    addContact(state, action) {
       return [...state, { ...action.payload }];
     },
     deleteContact(state, action) {
