@@ -3,7 +3,7 @@ import { Alert } from './Alert';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getContacts } from '../redux/selectors';
-import { addNewContact } from '../redux/contactsSlice';
+import { addContact } from '../redux/contactsSlice';
 import { nanoid } from 'nanoid';
 
 export const ContactForm = () => {
@@ -26,7 +26,7 @@ export const ContactForm = () => {
       setName(name.value);
     } else {
       dispatch(
-        addNewContact({ id: nanoid(), name: name.value, number: number.value })
+        addContact({ id: nanoid(), name: name.value, number: number.value })
       );
       setName('');
     }
