@@ -5,9 +5,9 @@ export const selectContacts = state => state.contacts.items;
 export const selectLoading = state => state.contacts.isLoading;
 export const selectError = state => state.contacts.error;
 export const selectFilter = state => state.filter;
-
+/*
 export const selectVisibleTasks = createSelector(
-  [selectContacts, selectStatusFilter],
+  [selectContacts, selectFilter],
   (tasks, statusFilter) => {
     console.log('Calculating visible tasks');
 
@@ -37,3 +37,4 @@ export const selectTaskCount = createSelector([selectTasks], tasks => {
     { active: 0, completed: 0 }
   );
 });
+*/
