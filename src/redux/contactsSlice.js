@@ -33,13 +33,13 @@ const contactsSlice = createSlice({
       state.error = null;
       state.items.push(action.payload);
     },
-    [addContact.rejected]: handleRejected,
-    addContact(state, action) {
-      return [...state, { ...action.payload }];
+    [deleteContact.rejected]: handleRejected,
+    [deleteContact.fulfilled](state, action) {
+      state.isLoading = false;
+      state.error = null;
+      state.items.push(action.payload);
     },
-    deleteContact(state, action) {
-      return state.filter(contact => contact.id !== action.payload);
-    },
+    [deleteContact.rejected]: handleRejected,
   },
 });
 
