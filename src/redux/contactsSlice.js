@@ -37,7 +37,7 @@ const contactsSlice = createSlice({
     [deleteContact.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
-      state.items.push(action.payload);
+      state.items = state.filter(contact => contact.id !== action.payload);
     },
     [deleteContact.rejected]: handleRejected,
   },
