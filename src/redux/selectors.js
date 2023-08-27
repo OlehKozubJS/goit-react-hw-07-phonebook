@@ -4,10 +4,10 @@ import { statusFilters } from './constants';
 export const selectContacts = state => state.contacts.items;
 export const selectLoading = state => state.contacts.isLoading;
 export const selectError = state => state.contacts.error;
-export const getFilter = state => state.filter;
+export const selectFilter = state => state.filter;
 
 export const selectVisibleTasks = createSelector(
-  [selectTasks, selectStatusFilter],
+  [selectContacts, selectStatusFilter],
   (tasks, statusFilter) => {
     console.log('Calculating visible tasks');
 
