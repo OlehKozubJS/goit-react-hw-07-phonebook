@@ -1,12 +1,17 @@
 import ContactListStyles from './PhonebookCSS/ContactList.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectContacts, selectFilter } from '../redux/selectors';
-import { deleteContact } from '../redux/operations';
+import { fetchContacts, deleteContact } from '../redux/operations';
+import { useEffect } from 'react';
 
 export const ContactList = () => {
   const contacts = useSelector(selectContacts);
   const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, []);
 
   const getFilteredContacts = (query, items) => {
     const filteredItems = items.filter(contact =>
