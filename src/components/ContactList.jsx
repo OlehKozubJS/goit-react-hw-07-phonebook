@@ -1,6 +1,6 @@
 import ContactListStyles from './PhonebookCSS/ContactList.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectContacts } from '../redux/selectors';
+import { selectContacts, selectFilter } from '../redux/selectors';
 import { deleteContact } from '../redux/contactsSlice';
 
 export const ContactList = () => {
