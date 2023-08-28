@@ -1,9 +1,9 @@
 import AlertStyles from './PhonebookCSS/Alert.module.css';
 
-export const Alert = () => {
+export const LoadAlert = () => {
   return (
     <div className={AlertStyles.alert}>
-      <span className={AlertStyles.alertText}>Request in progress...</span>
+      <span className={AlertStyles.alertText}></span>
     </div>
   );
 };
