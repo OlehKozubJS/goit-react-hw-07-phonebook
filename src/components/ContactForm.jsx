@@ -2,13 +2,13 @@ import ContactFormStyles from './PhonebookCSS/ContactForm.module.css';
 import { Alert } from './Alert';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getContacts } from '../redux/selectors';
-import { addContact } from '../redux/contactsSlice';
+import { selectContacts } from '../redux/selectors';
+import { addContact } from '../redux/operations';
 import { nanoid } from 'nanoid';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
 
   const closeAlert = () => {
