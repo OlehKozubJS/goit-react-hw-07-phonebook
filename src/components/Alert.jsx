@@ -1,9 +1,9 @@
 import propTypes from 'prop-types';
 import AlertStyles from './PhonebookCSS/Alert.module.css';
 
-export const Alert = ({ isInContacts, clickFunction, name }) => {
+export const Alert = ({ clickFunction, name }) => {
   return (
-    <div className={isInContacts ? AlertStyles.alert : AlertStyles.hidden}>
+    <div className={AlertStyles.alert}>
       <span className={AlertStyles.alertText}>
         {name} is already in contacts!
       </span>
@@ -15,7 +15,6 @@ export const Alert = ({ isInContacts, clickFunction, name }) => {
 };
 
 Alert.propTypes = {
-  isInContacts: propTypes.bool.isRequired,
   clickFunction: propTypes.func.isRequired,
   name: propTypes.string.isRequired,
 };
