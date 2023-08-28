@@ -1,8 +1,9 @@
 import { ContactForm } from './ContactForm';
 import { ContactList } from './ContactList';
 import { Filter } from './Filter';
+import { LoadAlert } from './LoadAlert';
 import PhonebookStyles from './PhonebookCSS/Pnonebook.module.css';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectIsLoading, selectError } from '../redux/selectors';
 
 export const App = () => {
@@ -13,7 +14,7 @@ export const App = () => {
     <div className={PhonebookStyles.phonebook}>
       <h1 className={PhonebookStyles.phonebookHeader}>Phonebook</h1>
       <ContactForm />
-      {isLoading && !error && <b>Request in progress...</b>}
+      {isLoading && !error && <LoadAlert />}
       <h2 className={PhonebookStyles.contactsHeader}>Contacts</h2>
       <Filter className="filterInput" />
       <ContactList className="contactList" />
