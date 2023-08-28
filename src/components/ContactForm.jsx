@@ -67,7 +67,7 @@ export const ContactForm = () => {
           Add contact
         </button>
       </form>
-      <Alert name={name} clickFunction={closeAlert} />
+      {name && <Alert name={name} clickFunction={closeAlert} />}
     </>
   );
 };
