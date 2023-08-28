@@ -14,7 +14,7 @@ export const App = () => {
     <div className={PhonebookStyles.phonebook}>
       <h1 className={PhonebookStyles.phonebookHeader}>Phonebook</h1>
       <ContactForm />
-      {isLoading && !error && <LoadAlert />}
+      {isLoading && !error && <LoadAlert>Request in progress...<LoadAlert />}
       <h2 className={PhonebookStyles.contactsHeader}>Contacts</h2>
       <Filter className="filterInput" />
       <ContactList className="contactList" />
