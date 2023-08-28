@@ -11,7 +11,7 @@ export const ContactList = () => {
 
   useEffect(() => {
     dispatch(fetchContacts());
-  }, []);
+  }, [contacts]);
 
   const getFilteredContacts = (query, items) => {
     const filteredItems = items.filter(contact =>
